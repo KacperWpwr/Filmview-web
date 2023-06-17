@@ -1,0 +1,496 @@
+@import "src/index";
+
+.admin-navbar-container{
+  height: 100vh;
+  width: 10vw;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: list-item;
+
+  background-color: lightgray;
+
+  overflow-y: scroll;
+  overflow-x: visible;
+}
+
+.admin-navbar-choice{
+  height: 5vh;
+  width: 10vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-bottom: $theme-color-primary 1px solid;
+
+  font-size: 2vh;
+
+  cursor: pointer;
+}
+
+.admin-navbar-choice:hover{
+  background-color: darkgray;
+}
+
+.admin-content-display{
+  width: 50vw;
+  height: 75vh;
+
+  position: fixed;
+  top: 15vh;
+  left: 25vw;
+
+  border: $theme-color-primary 2px solid;
+  border-radius: min(1vh, 1vw);
+
+  overflow: hidden;
+}
+
+
+.admin-cd-search-bar-container{
+  width: 50vw;
+  height: 5vh;
+
+  margin-bottom: 1vh;
+
+  border-bottom: $theme-color-primary 2px solid;
+}
+.admin-cd-search-bar{
+  width: 50vw;
+  height: 5vh;
+
+  font-size: 3vh;
+}
+.admin-cd-empty{
+  width: 50vw;
+  height: 60vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 3vh;
+  color: gray;
+}
+
+.admin-cd-list{
+  width: 50vw;
+  height: 60vh;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+
+  flex-wrap: wrap;
+}
+
+.admin-cd-item-preview{
+  width: 11vw;
+  height: 18vh;
+
+  margin: 1vh 0.5vw 1vh 0.5vw;
+
+  border: $theme-color-primary 1px solid;
+
+  background-color: darkgray;
+
+  cursor: pointer;
+}
+
+.admin-cd-item-preview:hover{
+  background-color: lightgray;
+}
+
+.admin-cd-item-preview:active{
+  background-color: darkgray;
+}
+
+.admin-cd-item-preview-image{
+  width: 10vw;
+  height: 14vh;
+
+  margin: 0.5vh 0.5vw;
+}
+
+.admin-cd-item-preview-name{
+  width: 11vw;
+  height: 3vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+.admin-cd-list-footer{
+  width: 50vw;
+  height: 4vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 4vh;
+}
+.admin-cd-list-footer-button{
+  height: 2vh;
+  width: 2vh;
+
+  margin: 0 0.2vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: darkgray;
+
+  font-size: 2vh;
+  font-weight: bold;
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: gray;
+
+  cursor: pointer;
+}
+.admin-cd-list-footer-button:hover{
+  background-color: lightgray;
+}
+.admin-cd-list-footer-button.current{
+  background-color: mediumslateblue;
+
+  color: lightgray;
+
+  border-color: blueviolet;
+
+  cursor: default;
+}
+.admin-cd-list-footer-button.disabled{
+  background-color: darkgray;
+
+  cursor: default;
+}
+
+
+.admin-cd-image-input{
+  width: 50vw;
+  height: 5vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 3vh 0 3vh 0;
+
+
+}
+
+.admin-cd-title-input-container{
+  width: 50vw;
+  height: 5vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 1vh;
+}
+
+.admin-cd-title-input{
+  width: 30vh;
+  height: 3vh;
+
+  font-size: 2vh;
+}
+
+.admin-cd-description-input-container{
+  width: 50vw;
+  height: 10vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 3vh;
+}
+
+.admin-cd-description-input{
+  width: 30vw;
+  height: 8vh;
+
+  resize: none;
+}
+
+.admin-cd-actor-director-list-container{
+  width: 45vw;
+  height: 38vh;
+
+  display: flex;
+  align-items: center;
+
+  margin: 0 2.5vw;
+}
+
+.admin-cd-actor-section-container{
+  width: 20vw;
+  height: 36vh;
+
+  margin: 1vh 5vw 1vh 0;
+
+  border: $theme-color-primary 1px solid;
+}
+
+.admin-cd-director-section-container{
+  width: 20vw;
+  height: 36vh;
+
+  margin: 1vh 0;
+
+  display: flex;
+  flex-wrap: nowrap;
+
+
+  border: $theme-color-primary 1px solid;
+
+  overflow: hidden;
+}
+
+.admin-cd-fstar-section{
+  width: 20vw;
+  height: 28vh;
+}
+.admin-cd-fstar-section-name{
+  width: 20vw;
+  height: 3vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 1vh;
+
+  font-size: 2vh;
+  font-weight: bold;
+
+}
+
+.admin-cd-fstar-open-list.open {
+  width: 20vw;
+  height: 3vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: darkgray;
+
+  font-size: 2vh;
+  font-weight: bold;
+
+  cursor: pointer;
+
+}
+
+.admin-cd-fstar-open-list.open:hover{
+  background-color: lightgray;
+}
+.admin-cd-fstar-open-list.open:active{
+  background-color: darkgray;
+}
+.admin-cd-fstar-open-list.close{
+  width: 20vw;
+  height: 3vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: indianred;
+
+  font-size: 2vh;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.admin-cd-fstar-open-list.close:hover{
+  background-color: red;
+}
+
+.admin-cd-fstar-open-list.close:active{
+  background-color: indianred;
+}
+
+.admin-cd-choosen-fstar-list{
+  width: 20vw;
+  height: 21vh;
+}
+
+.admin-cd-fstar-choice-list-container{
+  width: 20vw;
+  height: 35vh;
+
+  background-color: lightgray;
+}
+.admin-cd-fstar-choice-list-title{
+  width: 20vw;
+  height: 3vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-bottom: $theme-color-primary 1px solid;
+
+  font-size: 2vh;
+  font-weight: bold;
+}
+
+.admin-cd-fstar-choice-list-searchbar{
+  width: 20vw;
+  height: 2vh;
+
+}
+
+.admin-cd-fstar-choice-list{
+  width: 20vw;
+  height: 30vh;
+
+  overflow-x: scroll;
+}
+.admin-cd-fstar-display{
+  width: 20vw;
+  height: 5vh;
+
+  display: flex;
+  align-items: center;
+
+  border-bottom: $theme-color-primary 1px solid;
+
+  cursor: pointer;
+}
+.admin-cd-fstar-display:hover{
+  background-color: $background-color;
+}
+
+.admin-cd-fstar-display-image{
+  height: 4vh;
+  min-width: 3vw;
+  max-width: 5vw;
+
+  margin: 0.5vh 0.5vw;
+}
+.admin-cd-fstar-display-delete{
+  width: 4vw;
+  height: 3vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: 7vw;
+
+  background-color: indianred;
+
+}
+
+.admin-cd-fstar-display-delete:hover{
+  background-color: red;
+}
+
+.admin-cd-fstar-display-delete:active{
+  background-color: indianred;
+}
+
+.admin-cd-footer-button-container{
+  width: 50vw;
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+}
+.admin-cd-button-container{
+  width: 25vw;
+  height: 7vh;
+
+  display: flex;
+  justify-content: space-evenly;
+}
+.admin-cd-button.cancel{
+  width: 10vw;
+  height: 4vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: indianred;
+
+  font-size: 2vh;
+  cursor: pointer;
+
+}
+.admin-cd-button.cancel:hover{
+  background-color: red;
+}
+.admin-cd-button.cancel:active{
+  background-color: indianred;
+}
+.admin-cd-button.submit{
+  width: 10vw;
+  height: 4vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: darkgray;
+
+  font-size: 2vh;
+
+  cursor: pointer;
+}
+
+.admin-cd-button.submit:hover{
+  background-color: lightgray;
+}
+
+.admin-cd-button.submit:active{
+  background-color: darkgray;
+}
+
+
+.admin-cd-test-input-container{
+  width: 50vw;
+  height: 6vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 4vh;
+
+}
+
+.admin-cd-test-input{
+  width: 30vh;
+  height: 3vh;
+
+  font-size: 2vh;
+}
+
+#filmstar-lastanme-input{
+  margin-bottom: 40vh;
+}
+
+
+
+
+
+
+
+
