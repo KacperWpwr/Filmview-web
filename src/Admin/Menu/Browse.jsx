@@ -25,7 +25,7 @@ export function BrowseFilms({setMode}){
                 result.push(film)
             }
         })
-
+        console.log(result)
         setDisplayFilms(result)
 
         setPageNum(Math.ceil(result.length/per_page))
@@ -63,7 +63,7 @@ export function BrowseFilms({setMode}){
     },[])
 
     useEffect(()=>{
-
+        console.log('reloading')
         const start = per_page*(current_page-1)
         let end =0
 
@@ -73,10 +73,10 @@ export function BrowseFilms({setMode}){
             end = display_films.length
         }
 
-        if(current_page!=0){
+        if(current_page!==0){
             setCurrentPageFilms(display_films.slice(start,end))
         }
-    },[current_page])
+    },[current_page,display_films])
 
 
 
@@ -187,7 +187,7 @@ export function BrowseFilmStars( {setMode}){
         if(current_page!==0){
             setCurrentPageStars(display_film_stars.slice(start,end))
         }
-    },[current_page])
+    },[current_page,display_film_stars])
 
     return (
         <div className='admin-content-display'>
@@ -197,7 +197,6 @@ export function BrowseFilmStars( {setMode}){
             </div>
             <div className='admin-cd-list'>
                 {current_page_stars.map(film_star =>{
-                    console.log(api_path+'filmstar/'+film_star.id+'/picture')
                     return (
                         <div key={film_star.id} className='admin-cd-item-preview'
                              onClick={

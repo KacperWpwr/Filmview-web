@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import './Admin/LoginPage/LoginPage.scss'
 import './Admin/Menu/AdminMenu.scss'
+import './User/NavBar/Navbar.scss'
+import './User/MainPage/MainPage.scss'
+import './User/SearchPage/SearchPage.scss'
+import './User/FilmPage/FilmPage.scss'
 import App from './App';
 
 

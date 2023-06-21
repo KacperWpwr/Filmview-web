@@ -1,0 +1,105 @@
+@import "src/index";
+
+.usr-mp-container{
+  display: grid;
+  justify-content: center;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top:15vh;
+
+
+
+  background-color: $background-color;
+}
+
+.usr-mp-content-separator{
+  height: 7vh;
+  width: 100vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 5vh 0 0 0;
+
+
+}
+
+.usr-mp-content-separator-context{
+  width: 15vw;
+  height: 6vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-bottom: $theme-color-secondary solid 2px;
+
+  font-size: 5vh;
+
+}
+
+.usr-mp-content-display{
+  height: 50vh;
+  width: 40vw;
+
+  padding: 0;
+
+  list-style: none;
+
+  justify-self: center;
+
+
+
+  border: $theme-color-primary solid 1px;
+
+  overflow-x: scroll;
+}
+
+.usr-mp-film-display{
+  width: 40vw;
+  height: 9vh;
+
+  display: flex;
+  align-items: center;
+
+  border-bottom: $theme-color-primary solid 0.5px;
+
+  cursor: pointer;
+}
+
+.usr-mp-film-display:hover{
+  background-color: lightgray;
+}
+
+
+.usr-mp-film-display-picture{
+  width: 8vh;
+  height: 8vh;
+
+  margin: 0.5vh;
+}
+
+.usr-mp-film-display-info{
+  height: 4vh;
+  width: auto;
+}
+
+.usr-mp-film-display-name{
+  font-weight: bold;
+}
+
+.usr-mp-film-display-rating-container{
+
+  display: flex;
+  align-items: center;
+
+  margin-top: 0.2vh;
+}
+
+.usr-mp-film-display-rating{
+  margin: 0 0 0 0.5vw;
+}

@@ -13,3 +13,17 @@ export async function getFilmDisplay(film_title){
         method: 'GET'
     })
 }
+
+export async function getTopFilms(number){
+    const path = api_path+'film/top/'+number
+
+    return await fetch(path)
+}
+
+export async function getFilmReviews(title){
+    const path = api_path+ 'film/'+title+'/reviews'
+
+    return await fetch(path)
+}
+
+
