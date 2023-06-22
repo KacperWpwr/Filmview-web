@@ -19,7 +19,7 @@ export default function LoginPage(){
 
             sessionStorage.setItem('admin_token', encrypted_token)
 
-            window.location.pathname = '/admin/home'
+            window.location.pathname = '/admin_menu'
         }else{
             const body = await response.json()
             console.clear()

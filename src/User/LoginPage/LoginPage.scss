@@ -1,0 +1,106 @@
+@import "src/index";
+
+.login-register-container{
+  width: 40vw;
+  height: 60vh;
+
+  position: fixed;
+  top: 20vh;
+  left: 30vw;
+
+  border: $theme-color-primary solid 2px;
+  border-radius: 5vh;
+}
+.login-register-choice-container{
+  margin-top: 2vh;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+}
+.log-inner-container,
+.reg-inner-container{
+  justify-self: center;
+  display: grid;
+  justify-items: center;
+}
+.log-inner-container{
+  margin-top: 15vh;
+}
+.reg-inner-container{
+  margin-top: 8vh;
+}
+.sign-in,
+.sign-up{
+  display: none;
+}
+
+
+.log-reg-choice{
+  text-transform: uppercase;
+  font-size: 2vh;
+  padding-bottom: 0.4vh;
+  margin: 0 1.2vh 0.8vh 0;
+  display: inline-block;
+  border-bottom:2px solid transparent ;
+  cursor: pointer;
+}
+.sign-in:checked+.log-reg-choice,
+.sign-up:checked+.log-reg-choice{
+  color: $theme-color-tertiary;
+  border-color: $theme-color-tertiary;
+}
+
+.log-reg-button{
+  width: 8vw;
+  height: 4vh;
+
+  justify-self: center;
+
+  background-color: $theme-color-secondary;
+
+  color: $theme-color-primary;
+
+  border-style: none;
+  border-radius: 0.3vw;
+  box-shadow: 0 0 10px -1px rgba(38, 38, 40, 1);
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+.log-reg-button:hover{
+  background-color: $theme-color-tertiary;
+
+}
+.log-reg-button:active{
+  background-color: $theme-color-secondary;
+}
+.log-reg-text{
+  height: 3vh;
+  width: 20vw;
+  margin-bottom: 0.5vh;
+  background-color: lightgrey;
+}
+.log-reg-text.wrong{
+  border-color: red;
+  border-style: solid;
+}
+.log-reg-text-container{
+  margin-bottom: 2vh;
+  height: 5vh;
+}
+
+.log-reg-error-feedback{
+  font-size: 1.5vh;
+  color: red;
+}
+
+#checkbox-register{
+  margin-bottom: 1vh;
+}
+.check-incorrect{
+  outline-color: red;
+  outline-width: 2px;
+  outline-style: solid;
+}

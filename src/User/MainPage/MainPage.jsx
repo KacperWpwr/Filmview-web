@@ -18,7 +18,7 @@ export function MainPage(){
                 alert(body.detail)
             }
         }
-
+        document.title='Filmview'
         fetch_data()
     },[])
 

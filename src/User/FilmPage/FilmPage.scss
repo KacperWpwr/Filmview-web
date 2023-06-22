@@ -214,6 +214,10 @@
 
   cursor: pointer;
 
+  border-style: none;
+  border-radius: 0.3vw;
+  box-shadow: 0 0 10px -1px rgba(38, 38, 40, 1);
+
   font-weight: bold;
 }
 
@@ -235,6 +239,8 @@
   align-items: center;
   justify-content: center;
 
+
+
   border-bottom: $theme-color-primary 1px solid;
 
   font-size: 2.5vh;
@@ -244,5 +250,78 @@
   width: 25vw;
   height: auto;
 
+  padding: 0;
+
  list-style: none;
+}
+
+.usr-fp-review-container{
+  width: 25vw;
+  height: 10vh;
+
+
+
+  border-bottom: $theme-color-primary 1px solid;
+}
+
+.usr-fp-review-header{
+  width: 25vw;
+  height: 4vh;
+
+
+}
+
+.usr-fp-review-login{
+  width: 25vw;
+  height: 2.5vh;
+
+  margin-bottom: 0.3vh;
+
+  display: flex;
+  justify-content: center;
+
+  font-size: 1.8vh;
+  font-weight: bold;
+}
+.usr-fp-review-star-container{
+  width: 15vh;
+  height: 2vh;
+
+  margin-left: 8vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.usr-fp-review-description{
+  width: 25vw;
+  height: 5.5vh;
+
+  white-space: pre-line;
+  overflow-y: scroll;
+}
+
+.usr-fp-rating-star-checked{
+  width: 1vw;
+  height: 2vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: 0.4vw;
+
+  color: $theme-color-tertiary;
+  cursor: pointer;
+}
+
+.usr-fp-rating-star{
+  width: 1vw;
+  height: 2vh;
+
+  margin-left: 0.2vw;
+
+  color: $theme-color-primary;
+  cursor: pointer;
 }

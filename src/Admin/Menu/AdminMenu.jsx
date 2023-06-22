@@ -1,13 +1,6 @@
 import {useEffect, useState} from "react";
-import {BrowserRouter} from "react-router-dom";
-import {getFilms} from "../../Requests/Other/Film";
-import {getFilmStars} from "../../Requests/Other/FilmStar";
-import {api_path} from "../../Requests/Path";
-import {AddImageToFilm, CreateNewFilm} from "../../Requests/Admin/Film";
-import {AddFilmStarPicture, CreateNewFimStar, CreateNewFimStars} from "../../Requests/Admin/FilmStar";
 import {CreateFilm} from "./CreateFilm";
 import {CreateFilmStar} from "./CreateFilmStar";
-import * as PropTypes from "prop-types";
 import {BrowseFilms, BrowseFilmStars} from "./Browse";
 
 export const options = {
@@ -35,6 +28,7 @@ export function AdminMenu(){
 
 
     useEffect(()=>{
+        console.log("I'm here")
         if(!sessionStorage.getItem('admin_token')){
           alert('You are not logged!')
          window.location.pathname='/admin'

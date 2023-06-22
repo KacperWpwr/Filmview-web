@@ -3,10 +3,11 @@ import {Outlet} from "react-router-dom";
 
 export function NavBar({logged, setLogged}){
 
-
+    console.log('User logged: '+logged)
     const log_out = ()=>{
         setLogged(false)
-        sessionStorage.removeItem('usr-token')
+        sessionStorage.removeItem('jwt')
+        window.location.pathname = '/'
     }
     return(
         <>
@@ -24,7 +25,7 @@ export function NavBar({logged, setLogged}){
                 </div>
                 <div className='usr-nav-button-part'>
                     {logged ? <div className='usr-nav-navigation' onClick={log_out}>Logout</div>:
-                        <div className='usr-nav-navigation'>Log in/Register</div>}
+                        <div className='usr-nav-navigation' onClick={()=>{window.location.pathname='/auth'}}>Log in/Register</div>}
                 </div>
             </div>
 

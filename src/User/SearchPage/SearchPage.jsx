@@ -39,7 +39,7 @@ export function SearchPage(){
                 window.location.pathname='/'
             }
         }
-
+        document.title = 'Search'
         fetch_data()
     },[])
 

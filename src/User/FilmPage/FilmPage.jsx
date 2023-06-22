@@ -1,9 +1,11 @@
 import {useEffect, useState} from "react";
 import {getFilmDisplay, getFilmReviews} from "../../Requests/Other/Film";
 import {api_path} from "../../Requests/Path";
+import {addRating, hasRated} from "../../Requests/User/Film";
 
 
 export function FilmPage({logged}){
+    const [film_id, setFilmId] = useState(0)
     const [title,setTitle] = useState('')
     const [description,setDescription] = useState('')
     const [rating,setRating] = useState('')
@@ -24,28 +26,60 @@ export function FilmPage({logged}){
 
     const send_review = async () =>{
         if(!logged){
-            window.location.pathname='/login'
+            window.location.pathname='/auth'
         }else{
+            const result = await addRating(star_amount, film_id, review_text)
+            const body = await result.json()
+
+            if(result.ok){
+                alert('review added succesfully')
+                const result_reviews = await getFilmReviews(title)
+                const body_reviews = await result_reviews.json()
+
+                if(result_reviews.ok){
+                    setReviews(body_reviews.ratings)
+                    window.location.reload()
+                }else{
+                    alert(body.detail)
+                }
+            }else{
+                alert(body.detail)
+            }
 
         }
     }
 
     useEffect(()=>{
+        const current_title = sessionStorage.getItem('usr-current-film')
         const fetch_data = async ()=>{
-            const title = sessionStorage.getItem('usr-current-film')
-            console.log(title)
 
-            const result = await getFilmDisplay(title)
+
+
+            const result = await getFilmDisplay(current_title)
             const body = await result.json()
 
             if(result.ok){
-                setTitle(title)
+                setFilmId(body.id)
+                setTitle(current_title)
                 setDescription(body.description)
                 setRating(body.rating)
                 setActors(body.actors)
                 setDirectors(body.directors)
-                const result_reviews = await getFilmReviews(title)
+                const result_reviews = await getFilmReviews(current_title)
                 const body_reviews = await result_reviews.json()
+
+                if(sessionStorage.getItem('jwt')){
+                    const resp = await hasRated(body.id)
+                    const res_body = await resp.json()
+
+                    if(resp.ok){
+                        setAlreadyReviewed(res_body.rated)
+                    }else{
+                        alert(res_body.detail)
+                        sessionStorage.removeItem('jwt')
+                        window.location.pathname='/'
+                    }
+                }
 
                 if(result_reviews.ok){
                     setReviews(body_reviews.ratings)
@@ -56,7 +90,7 @@ export function FilmPage({logged}){
                 alert(body.detail)
             }
         }
-
+        document.title= current_title
         fetch_data()
 
     },[])
@@ -142,7 +176,31 @@ export function FilmPage({logged}){
                     <div className='usr-fp-review-list-title'>
                         Reviews
                     </div>
-                    <ul className='usr-fp-review-list'></ul>
+                    <ul className='usr-fp-review-list'>
+                        {reviews.map(review=>{
+                            return(
+                                <div className='usr-fp-review-container'>
+                                    <div className='usr-fp-review-header'>
+                                        <div className='usr-fp-review-login'>
+                                            {review.login}
+                                        </div>
+                                        <div className='usr-fp-review-star-container'>
+                                            {star_list.map(star=>{
+                                                return(
+                                                    <div className={star<=review.rating? 'usr-fp-rating-star-checked': 'usr-fp-rating-star'}>
+                                                        <i className='fa fa-star fa-0.5'></i>
+                                                    </div>
+                                                )
+                                            })}
+                                        </div>
+                                    </div>
+                                    <div className='usr-fp-review-description'>
+                                        {review.description}
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </ul>
                 </div>
             </div>
         </div>

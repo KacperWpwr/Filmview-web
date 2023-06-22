@@ -7,6 +7,7 @@ import './User/NavBar/Navbar.scss'
 import './User/MainPage/MainPage.scss'
 import './User/SearchPage/SearchPage.scss'
 import './User/FilmPage/FilmPage.scss'
+import './User/LoginPage/LoginPage.scss'
 import App from './App';
 
 
